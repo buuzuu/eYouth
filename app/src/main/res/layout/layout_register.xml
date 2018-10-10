@@ -73,6 +73,34 @@
             app:met_floatingLabel="highlight"
             app:met_primaryColor="@color/colorPrimary"
             app:met_singleLineEllipsis="true" />
+        <TextView
+            android:layout_width="match_parent"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:text="Enter OTP below"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edtOtp"
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="OTP"
+            android:inputType="phone"
+            android:text=""
+            android:textColor="@color/colorPrimary"
+            android:textColorHint="@color/colorPrimary"
+            android:textSize="20sp"
+            app:met_baseColor="@color/colorPrimary"
+            app:met_floatingLabel="highlight"
+            app:met_primaryColor="@color/colorPrimary"
+            app:met_singleLineEllipsis="true" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:id="@+id/getOTP"
+            android:text="Get OTP"/>
 
 
     </LinearLayout>
