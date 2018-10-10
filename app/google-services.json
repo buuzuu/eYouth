@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "628433705889",
+    "firebase_url": "https://e-youth.firebaseio.com",
+    "project_id": "e-youth",
+    "storage_bucket": "e-youth.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:628433705889:android:58d690327a53aeae",
+        "android_client_info": {
+          "package_name": "com.example.hritik.e_youth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "628433705889-6o49vj9jdmojl03187kgq5cqn1gu4786.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hritik.e_youth",
+            "certificate_hash": "8405f2533eced7e0cc5c0072cb2349bc287f5ae7"
+          }
+        },
+        {
+          "client_id": "628433705889-b9kjrctu0o4k2o713erj53mc0lgmgpk0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDF3ZlHcQlGYZ1UY5GVW9sX5MhBHZbQVMw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "628433705889-b9kjrctu0o4k2o713erj53mc0lgmgpk0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
