@@ -5,11 +5,14 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.bumptech.glide.request.RequestOptions;
+import com.example.hritik.e_youth.Adapter.UserReviewAdapter;
 import com.glide.slider.library.Animations.DescriptionAnimation;
 import com.glide.slider.library.SliderLayout;
 import com.glide.slider.library.SliderTypes.TextSliderView;
@@ -29,6 +32,10 @@ public class CurrentOffer extends Fragment {
     private SliderLayout mDemoSlider;
     ArrayList<Integer> listImage = new ArrayList<>();
     ArrayList<String> listName = new ArrayList<>();
+    ArrayList<Integer> mImage = new ArrayList<>();
+    ArrayList<String> mNames = new ArrayList<>();
+    private RecyclerView recyclerView;
+
 
 
     @Nullable
@@ -36,27 +43,16 @@ public class CurrentOffer extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.current_offer,container,false);
-
+        setUpData();
         decentBanner =view.findViewById(R.id.decent_banner);
         mDemoSlider = view.findViewById(R.id.slider);
-        listImage.add(R.drawable.recommend_image);
-        listImage.add(R.drawable.popular_image);
-        listImage.add(R.drawable.daily_image);
-        listName.add("Recommended");
-        listName.add("Popular");
-        listName.add("Daily");
-        View view1 = getLayoutInflater().inflate(R.layout.popular_layout, null);
-        View view2 = getLayoutInflater().inflate(R.layout.daily_layout, null);
-        View view3 = getLayoutInflater().inflate(R.layout.recommend_layout, null);
-        views = new ArrayList<>();
-        views.add(view1);
-        views.add(view2);
-        views.add(view3);
+        recyclerView = view.findViewById(R.id.recyclerView);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(view.getContext(), LinearLayoutManager.HORIZONTAL, false);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(new UserReviewAdapter(view.getContext(),mNames,mImage));
 
-        titles = new ArrayList<>();
-        titles.add("POPULAR");
-        titles.add("IMAGE");
-        titles.add("RECOMMEND");
+
+
         decentBanner.start(views, titles, 2, 500, R.drawable.logo2);
 
 
@@ -87,6 +83,43 @@ public class CurrentOffer extends Fragment {
 
 
         return view;
+    }
+
+    private void setUpData() {
+        listImage.add(R.drawable.recommend_image);
+        listImage.add(R.drawable.popular_image);
+        listImage.add(R.drawable.daily_image);
+        listName.add("Recommended");
+        listName.add("Popular");
+        listName.add("Daily");
+        View view1 = getLayoutInflater().inflate(R.layout.popular_layout, null);
+        View view2 = getLayoutInflater().inflate(R.layout.daily_layout, null);
+        View view3 = getLayoutInflater().inflate(R.layout.recommend_layout, null);
+        views = new ArrayList<>();
+        views.add(view1);
+        views.add(view2);
+        views.add(view3);
+
+        titles = new ArrayList<>();
+        titles.add("POPULAR");
+        titles.add("IMAGE");
+        titles.add("RECOMMEND");
+
+
+
+        mNames.add("Hritik");
+        mNames.add("Prabal");
+        mNames.add("Prabal");
+        mNames.add("Mahima");
+        mNames.add("Lovish");
+        mImage.add(R.mipmap.boy1);
+        mImage.add(R.mipmap.boy);
+        mImage.add(R.mipmap.boy);
+        mImage.add(R.mipmap.girl);
+        mImage.add(R.mipmap.man);
+
+
+
     }
 
     @Override

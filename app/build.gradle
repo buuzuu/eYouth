@@ -51,6 +51,8 @@ dependencies {
     implementation 'it.chengdazhi.decentbanner:decentbanner:1.0.7'
     implementation "com.github.firdausmaulan:GlideSlider:$glide_slider_version"
 
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+
 
 }
 apply plugin: 'com.google.gms.google-services'
