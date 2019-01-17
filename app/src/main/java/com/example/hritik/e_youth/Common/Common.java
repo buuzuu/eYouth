@@ -184,5 +184,11 @@ public class Common {
             "skills, and enable them to seek better employment in the organized sector and thus to equip them for\n" +
             "better lives."};
 
+    public static String[] free_lancing_title = {"App Developer","UI Designer","Java Developer","DevOPS"};
+
+
+    public static String[] free_lancing_description = {"Create beautiful and responsive apps ","Design UI/UX for website and mobile apps"
+                                                        ,"Your job is to write beautiful java codes","Develop frontend and backed"};
+
 
 }

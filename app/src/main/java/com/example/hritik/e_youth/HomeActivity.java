@@ -23,14 +23,15 @@ public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private CircleImageView user_imageView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,19 +51,19 @@ public class HomeActivity extends AppCompatActivity
 
 
         //Setting user detail
-        View headerView=navigationView.getHeaderView(0);
-        user_imageView=headerView.findViewById(R.id.user_imageView);
+        View headerView = navigationView.getHeaderView(0);
+        user_imageView = headerView.findViewById(R.id.user_imageView);
 
 
         FragmentTransaction tx = getSupportFragmentManager().beginTransaction();
-        tx.replace(R.id.frameLayout, new SchemePortal());
+        tx.replace(R.id.frameLayout, new CurrentOffer());
         tx.commit();
         user_imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
 
-                startActivity(new Intent(HomeActivity.this,Profile.class));
+                startActivity(new Intent(HomeActivity.this, Profile.class));
             }
         });
 
@@ -94,9 +95,9 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+//        if (id == R.id.action_settings) {
+//            return true;
+//        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -110,31 +111,32 @@ public class HomeActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.Dashboard) {
             // Handle the camera action
-            selectedFragment = new SchemePortal();
+            selectedFragment = new CurrentOffer();
 
-        } else if (id == R.id.nav_gallery) {
-          //  selectedFragment = new AddQuestions();
+        } else if (id == R.id.Freelancing) {
+            selectedFragment = new FreeLancing();
 
 
-        } else if (id == R.id.nav_slideshow) {
-          //  selectedFragment = new CategoryRanking();
-
-        } else if (id == R.id.nav_manage) {
-           // selectedFragment = new Setting();
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.onlineStore) {
+            selectedFragment = new OnlineStore();
 
         }
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.frameLayout, new SchemePortal()).commit();
+        else if (id == R.id.schemePortal) {
+
+            selectedFragment = new SchemePortal();
+        }
+          else if (id == R.id.nav_send) {
+           selectedFragment = new Portfolio();
+        }
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.frameLayout, selectedFragment).commit();
 
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            drawer.closeDrawer(GravityCompat.START);
+            return true;
+        }
     }
-}
+

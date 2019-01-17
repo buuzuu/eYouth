@@ -19,4 +19,11 @@
     <color name="endblue">#0bcce6</color>
     <color name="graylight">#fafafa</color>
 
+    <color name="heart_primary_color">#da4439</color>
+    <color name="heart_secondary_color">#8a098c</color>
+
+
+    <color name="mc_title_bar">#FF16C2DD</color>
+    <color name="mc_state_pressed">#FF1088DD</color>
+
 </resources>
