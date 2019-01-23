@@ -23,6 +23,7 @@ public class OnlineStore extends Fragment {
     List<String> names = new ArrayList<>();
     List<String> price = new ArrayList<>();
     List<String> detail = new ArrayList<>();
+    List<Integer> image = new ArrayList<>();
 
     @Nullable
     @Override
@@ -32,7 +33,7 @@ public class OnlineStore extends Fragment {
         addData();
         rv = view.findViewById(R.id.online_store_rv);
         rv.setLayoutManager(new GridLayoutManager(view.getContext(),2));
-        rv.setAdapter(new OnlineStoreAdapter(view.getContext(),names,price,detail));
+        rv.setAdapter(new OnlineStoreAdapter(view.getContext(),names,price,detail,image));
 
 
 
@@ -41,17 +42,39 @@ public class OnlineStore extends Fragment {
 
     private void addData() {
 
+        names.add("Hand Bag");
+        names.add("Flower Pot");
+        names.add("God Sculpture");
         names.add("Lamp");
-        names.add("Light");
-        names.add("Fan");
-        names.add("Table");
-        price.add("24$");
-        price.add("4$");
-        price.add("13$");
-        price.add("15$");
-        detail.add("I don't know.");
-        detail.add("I don't know.");
-        detail.add("I don't know.");
-        detail.add("I don't know.");
+        names.add("Pottery");
+        names.add("Pickle");
+
+
+
+        price.add("₹ 100");
+        price.add("₹ 60");
+        price.add("₹ 50");
+        price.add("₹ 150");
+        price.add("₹ 75");
+        price.add("₹ 150");
+
+
+
+
+        detail.add("A simple carry bag made from jute");
+        detail.add("Beautiful flower stand");
+        detail.add("Lord Ganesha sculpture.");
+        detail.add("Celling lamp with multi colors. ");
+        detail.add("Colorful potts");
+        detail.add("One Kilogram Vegetable pickle");
+
+
+        image.add(R.drawable.weaving);
+        image.add(R.drawable.basket);
+        image.add(R.drawable.sclupture);
+        image.add(R.drawable.lamp);
+        image.add(R.drawable.pottery1);
+        image.add(R.drawable.pickle);
+
     }
 }

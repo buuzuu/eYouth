@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:src="@drawable/daily_image"
+        android:src="@drawable/handicraftskills"
         android:scaleType="centerCrop"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

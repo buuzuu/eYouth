@@ -53,7 +53,7 @@ public class CurrentOffer extends Fragment {
 
 
 
-        decentBanner.start(views, titles, 2, 500, R.drawable.logo2);
+        decentBanner.start(views, titles, 2, 500, R.drawable.logo);
 
 
         //SLider
@@ -86,9 +86,9 @@ public class CurrentOffer extends Fragment {
     }
 
     private void setUpData() {
-        listImage.add(R.drawable.recommend_image);
-        listImage.add(R.drawable.popular_image);
-        listImage.add(R.drawable.daily_image);
+        listImage.add(R.drawable.banner2);
+        listImage.add(R.drawable.skillindia);
+        listImage.add(R.drawable.banner);
         listName.add("Recommended");
         listName.add("Popular");
         listName.add("Daily");
@@ -107,7 +107,7 @@ public class CurrentOffer extends Fragment {
 
 
 
-        mNames.add("Hritik");
+        mNames.add("Hurray ! I got a job.");
         mNames.add("Prabal");
         mNames.add("Prabal");
         mNames.add("Mahima");

@@ -25,11 +25,11 @@
             android:icon="@drawable/ic_menu_manage"
             android:title="Scheme portal" />
 
-        <item
-            android:id="@+id/portFolio"
-            android:iconTint="@android:color/white"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Portfolio" />
+        <!--<item-->
+            <!--android:id="@+id/portFolio"-->
+            <!--android:iconTint="@android:color/white"-->
+            <!--android:icon="@drawable/ic_menu_manage"-->
+            <!--android:title="Portfolio" />-->
 
     </group>
 

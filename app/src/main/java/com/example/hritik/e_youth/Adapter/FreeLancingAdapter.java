@@ -25,11 +25,11 @@ import net.soulwolf.widget.materialradio.listener.OnCheckedChangeListener;
 public class FreeLancingAdapter extends RecyclerView.Adapter<FreeLancingAdapter.ViewHolder> {
 
 
-    public  String[] free_lancing_title = {"App Developer","UI Designer","Java Developer","DevOPS","Ruby Developer","App Developer","UI Designer","Java Developer","DevOPS"};
-    public  String[] free_lancing_description = {"Create beautiful and responsive apps ","Design UI/UX for website and mobile apps "
-            ,"Your job is to write beautiful java codes","Develop frontend and backed","Write clean ruby codes","Create beautiful and responsive apps ","Design UI/UX for website and mobile apps"
-            ,"Your job is to write beautiful java codes","Develop frontend and backed"};
-    public int[] image = {R.drawable.androidicon,R.drawable.ui,R.drawable.java,R.drawable.devops,R.drawable.ruby,R.drawable.androidicon,R.drawable.ui,R.drawable.java,R.drawable.devops};
+    public  String[] free_lancing_title = {"Content Writer","Handricraft Designer","Stiching Work","Poetry Writer","Handicraft Designer","Pottery Maker","UI Designer"};
+    public  String[] free_lancing_description = {"We want a content writer who writes the beautiful blogs. "," We want a workor who will make hand made Wood products"
+            ,"We want a employee who know how to stich the antique designery.","We want a hire a  poet for our blog who knows many types of poem writing.",
+            "We want a handicraft designer who know how to make handmade baskets","We want a potter for making antique pottery","Design UI/UX for website and mobile apps"};
+    public int[] image = {R.drawable.content,R.drawable.handicraft,R.drawable.clothing,R.drawable.poetrywriting,R.drawable.handicraft,R.drawable.pottery,R.drawable.ui};
     private Context context;
 
     public FreeLancingAdapter(Context context) {

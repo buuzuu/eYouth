@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.view.Gravity;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -23,6 +24,7 @@ public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private CircleImageView user_imageView;
+    Fragment selectedFragment = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +48,7 @@ public class HomeActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        final NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
 
@@ -63,7 +65,14 @@ public class HomeActivity extends AppCompatActivity
             public void onClick(View view) {
 
 
-                startActivity(new Intent(HomeActivity.this, Profile.class));
+                //startActivity(new Intent(HomeActivity.this, Profile.class));
+                selectedFragment = new Portfolio();
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.frameLayout, selectedFragment).commit();
+                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                drawer.closeDrawer(Gravity.LEFT);
+
+
             }
         });
 
@@ -106,7 +115,7 @@ public class HomeActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-        Fragment selectedFragment = null;
+
 
         // Handle navigation view item clicks here.
         int id = item.getItemId();
@@ -127,9 +136,9 @@ public class HomeActivity extends AppCompatActivity
 
             selectedFragment = new SchemePortal();
         }
-          else if (id == R.id.nav_send) {
-           selectedFragment = new Portfolio();
-        }
+//          else if (id == R.id.portFolio) {
+//           selectedFragment = new Portfolio();
+//        }
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.frameLayout, selectedFragment).commit();
 

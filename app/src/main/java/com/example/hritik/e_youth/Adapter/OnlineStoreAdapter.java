@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.hritik.e_youth.R;
@@ -18,12 +19,14 @@ public class OnlineStoreAdapter extends RecyclerView.Adapter<OnlineStoreAdapter.
     private List<String> product_Names;
     private List<String> product_price;
     private List<String> product_detail;
+    private List<Integer> product_image;
 
-    public OnlineStoreAdapter(Context context, List<String> product_Names, List<String> product_price, List<String> product_detail) {
+    public OnlineStoreAdapter(Context context, List<String> product_Names, List<String> product_price, List<String> product_detail, List<Integer> product_image) {
         this.context = context;
         this.product_Names = product_Names;
         this.product_price = product_price;
         this.product_detail = product_detail;
+        this.product_image = product_image;
     }
 
     @NonNull
@@ -40,6 +43,7 @@ public class OnlineStoreAdapter extends RecyclerView.Adapter<OnlineStoreAdapter.
         viewHolder.productName.setText(product_Names.get(i));
         viewHolder.productPrice.setText(product_price.get(i));
         viewHolder.productDetail.setText(product_detail.get(i));
+        viewHolder.imageView.setImageResource(product_image.get(i));
     }
 
     @Override
@@ -50,10 +54,12 @@ public class OnlineStoreAdapter extends RecyclerView.Adapter<OnlineStoreAdapter.
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView productName,productPrice,productDetail;
+        ImageView imageView;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             productName = itemView.findViewById(R.id.productName);
+            imageView = itemView.findViewById(R.id.picture);
             productPrice = itemView.findViewById(R.id.productPrice);
             productDetail = itemView.findViewById(R.id.productDescription);
         }
